@@ -1,5 +1,5 @@
 
-public class Store1 extends Sklad{
+public class Store1 {
     boolean mirror = false;
     boolean fridge = false;
     boolean wardrobe = false;
