@@ -1,9 +1,15 @@
 
-public class Prodavec1 extends Store1 {
+public class Prodavec1 extends Store1 implements Dostavka {
     double procent = 0;
     int money;
-    int dostavka = 20;
     int cost;
+    int dost = 20;
+    
+    @Override
+    public void dostavka() {
+        System.out.println("Доставка будет выполняться на автомобиле");
+        // dost = 20;
+    }
 
     Prodavec1() {
         super();
@@ -30,12 +36,14 @@ public class Prodavec1 extends Store1 {
                 cost = 20;
                 break;
         }
-        money = dostavka + cost;
-        if (cash >= money) {
-            if (have == false) {
+        money = dost + cost;
+        if (have == false) {
+            if (cash >= money) {
                 Sklad object = new Sklad();
                 if (object.vSklad(obj) == true) {
                     System.out.println("Спасибо за покупку! С вас " + money  );
+                    Prodavec1 del = new Prodavec1();
+                    del.dostavka();
                     procent += money * 0.1 ;
                     cash = cash - money;
                 }
@@ -44,18 +52,23 @@ public class Prodavec1 extends Store1 {
                 }
             }
             else {
+                System.out.println("У вас недостаточно денег!");
+            }
+        }
+        else {
+            if (cash >= cost) {
                 System.out.println("Спасибо за покупку! С вас " + cost);
                 procent += cost * 0.1 ;
                 cash = cash - cost;
             }
-        }
-        else {
-            System.out.println("У вас недостаточно денег!");
+            else {
+                System.out.println("У вас недостаточно денег!");
+            }
         }
         return cash;
-
 
     }
 
     
 }
+            

@@ -5,6 +5,7 @@ public class Sklad {
     boolean wardrobe = false;
     boolean bed = true;
     boolean lamp = true;
+    String owner = "OOO BuyPls";
     
     boolean vSklad(String obj) {
         boolean have = false;

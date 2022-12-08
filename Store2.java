@@ -5,6 +5,8 @@ public class Store2 {
     boolean wardrobe = false;
     boolean bed = true;
     boolean lamp = false;
+    String owner = "OOO Sps";
+
 
 
     

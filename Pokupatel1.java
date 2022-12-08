@@ -2,6 +2,7 @@
 public class Pokupatel1 {
     int cash;
     String object;
+    int id = 1 ;
     Pokupatel1(String object, int cash) {
         this.object = object;
         this.cash = cash;
@@ -11,6 +12,12 @@ public class Pokupatel1 {
     }
 
 
+    String name;
+    public void setName(String name) {
+        this.name = name; 
+    }
+    public String toString() {
+        return name +","+id;
+    }
 
-    
 }
